@@ -26,14 +26,18 @@ public final class R {
         public static final int splash_background1=0x7f020002;
     }
     public static final class id {
-        public static final int action_settings=0x7f090003;
+        public static final int action_settings=0x7f090006;
         public static final int bAdd=0x7f090001;
+        public static final int bResutls=0x7f090004;
         public static final int bSub=0x7f090002;
+        public static final int etCommands=0x7f090003;
         public static final int tvDisplay=0x7f090000;
+        public static final int tvResults=0x7f090005;
     }
     public static final class layout {
         public static final int activity_starting_point=0x7f030000;
         public static final int splash=0x7f030001;
+        public static final int text=0x7f030002;
     }
     public static final class menu {
         public static final int starting_point=0x7f080000;
