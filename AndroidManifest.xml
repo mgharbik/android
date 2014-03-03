@@ -22,7 +22,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.thenewboston.travis.StartingPoint"
+            android:name=".StartingPoint"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="com.thenewboston.travis.STARTINGPOINT" />
@@ -30,12 +30,17 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.thenewboston.travis.Menu"
+            android:name=".Menu"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="com.thenewboston.travis.MENU" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".TextPlay"
+            android:label="@string/app_name" >
+
         </activity>
     </application>
 
