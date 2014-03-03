@@ -12,12 +12,27 @@
 	   	android:password="true"
 	/>
 
+	<LinearLayout 
+	    android:weightSum="100"
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+		android:orientation="horizontal"
+	    >
 	<Button
+	    android:layout_weight="20"
 	    android:id="@+id/bResutls"
 	    android:layout_width="fill_parent"
 	    android:layout_height="wrap_content"
 	    android:text="Button" />
 
+	<ToggleButton
+   	    android:layout_weight="80"
+	    android:id="@+id/toggleButton1"
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:text="ToggleButton" />
+	</LinearLayout>
+	
 	<TextView
 	    android:id="@+id/tvResults"
 	    android:layout_width="fill_parent"
