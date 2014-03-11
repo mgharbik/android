@@ -58,9 +58,22 @@ public class TextPlay extends Activity{
 					display.setText("WTF!!!!");
 					display.setTextSize(crazy.nextInt(75));
 					display.setTextColor(Color.rgb(crazy.nextInt(256), crazy.nextInt(256), crazy.nextInt(256)));
+					switch(crazy.nextInt(3)){
+					case 0:
+						display.setGravity(Gravity.LEFT);						
+						break;
+					case 1:
+						display.setGravity(Gravity.CENTER);
+						break;
+						
+					case 2:
+						display.setGravity(Gravity.RIGHT);					
+						break;
+					}
 				}else{
 					display.setText("Invalid");
 					display.setGravity(Gravity.CENTER);
+					display.setTextColor(Color.WHITE);
 				}
 				
 			}
