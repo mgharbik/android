@@ -16,7 +16,7 @@ public class StartingPoint extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_starting_point);
+		setContentView(R.layout.main);
 		counter = 0;
 		add = (Button) findViewById(R.id.bAdd);
 		sub = (Button) findViewById(R.id.bSub);
