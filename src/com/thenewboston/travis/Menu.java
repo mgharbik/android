@@ -58,7 +58,11 @@ public class Menu extends ListActivity{
 			startActivity(i);
 			break;
 		case R.id.preferences:
-			
+			Intent i2 = new Intent("com.thenewboston.travis.PREFS");
+			startActivity(i2);
+			break;
+		case R.id.exit:
+			finish();
 			break;
 		}
 		return false;
