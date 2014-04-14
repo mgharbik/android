@@ -56,6 +56,14 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".SQLView"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="com.thenewboston.travis.SQLView" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
             android:name=".TextPlay"
             android:label="@string/app_name" >
         </activity>
