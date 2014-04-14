@@ -12,7 +12,7 @@ public class HotOrNot {
 	public static final String KEY_HOTNESS = "persons_hotness";
 	
 	private static final String DATABASE_NAME = "HotOrNotdb";
-	private static final String DATABASE_Table = "peopleTable";
+	private static final String DATABASE_TABLE = "peopleTable";
 	private static final int DATABASE_VERSION = 1;
 	
 	private DbHelper ourHelper;
@@ -29,7 +29,11 @@ public class HotOrNot {
 		@Override
 		public void onCreate(SQLiteDatabase db) {
 			// TODO Auto-generated method stub
-			
+			db.execSQL("CREATE TABLE " + DATABASE_TABLE + " (" + 
+					KEY_ROWID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
+					KEY_NAME + " TEXT NOT NULL, " +
+					KEY_HOTNESS + " TEXT NOT NULL);"
+					);
 		}
 
 		@Override
