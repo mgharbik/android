@@ -39,7 +39,8 @@ public class HotOrNot {
 		@Override
 		public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
 			// TODO Auto-generated method stub
-			
+			db.execSQL("DROP TABLE IF EXISTS " + DATABASE_TABLE);
+			onCreate(db);
 		}
 		
 	}
@@ -48,4 +49,9 @@ public class HotOrNot {
 		ourContext = c;
 	}
 	
+	public HotOrNot open(){
+		ourHelper = new DbHelper(ourContext);
+		ourDatabase = ourHelper.getWritableDatabase();
+		return this;
+	}
 }
