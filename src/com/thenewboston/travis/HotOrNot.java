@@ -4,6 +4,7 @@ import java.net.ContentHandler;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteDatabase.CursorFactory;
 import android.database.sqlite.SQLiteOpenHelper;
@@ -52,7 +53,7 @@ public class HotOrNot {
 		ourContext = c;
 	}
 	
-	public HotOrNot open(){
+	public HotOrNot open() throws SQLException{
 		ourHelper = new DbHelper(ourContext);
 		ourDatabase = ourHelper.getWritableDatabase();
 		return this;

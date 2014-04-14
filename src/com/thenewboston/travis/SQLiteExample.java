@@ -1,11 +1,13 @@
 package com.thenewboston.travis;
 
 import android.app.Activity;
+import android.app.Dialog;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 public class SQLiteExample extends Activity implements OnClickListener {
 
@@ -34,14 +36,27 @@ public class SQLiteExample extends Activity implements OnClickListener {
 		switch (arg0.getId()){
 		case R.id.bSQLUpdate:
 			
-			String name = sqlName.getText().toString();
-			String hotness = sqlHotness.getText().toString();
-			
-			HotOrNot entry = new HotOrNot(SQLiteExample.this);
-			entry.open();
-			entry.createEntry(name, hotness);
-			entry.close();
-			
+			boolean didItWork = true;
+			try{
+				String name = sqlName.getText().toString();
+				String hotness = sqlHotness.getText().toString();
+				
+				HotOrNot entry = new HotOrNot(SQLiteExample.this);
+				entry.open();
+				entry.createEntry(name, hotness);
+				entry.close();
+			}catch(Exception e){
+				didItWork = false;
+			}finally{
+				if (didItWork){
+					Dialog d = new Dialog(this);
+					d.setTitle("Heck yea!");
+					TextView tv = new TextView(this);
+					tv.setText("Success");
+					d.setContentView(tv);
+					d.show();
+				}
+			}
 			break;
 		case R.id.bSQLopenView:
 			
