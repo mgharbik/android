@@ -1,5 +1,8 @@
 package com.thenewboston.travis;
 
+import java.net.ContentHandler;
+
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteDatabase.CursorFactory;
@@ -53,5 +56,16 @@ public class HotOrNot {
 		ourHelper = new DbHelper(ourContext);
 		ourDatabase = ourHelper.getWritableDatabase();
 		return this;
+	}
+	
+	public void close(){
+		ourHelper.close();
+	}
+
+	public long createEntry(String name, String hotness) {
+		ContentValues cv = new ContentValues();
+		cv.put(KEY_NAME, name);
+		cv.put(KEY_HOTNESS, hotness);
+		return ourDatabase.insert(DATABASE_TABLE, null, cv);
 	}
 }
