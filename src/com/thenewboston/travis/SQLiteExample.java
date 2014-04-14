@@ -80,33 +80,66 @@ public class SQLiteExample extends Activity implements OnClickListener {
 			startActivity(i);
 			break;
 		case R.id.bgetInfo:
-			String s = sqlRow.getText().toString();	
-			long l = Long.parseLong(s);
-			HotOrNot hon = new HotOrNot(this);
-			hon.open();
-			String returnedName = hon.getName(l);
-			String returnedHotness = hon.getHotness(l);
-			hon.close();
-			
-			sqlName.setText(returnedName);
-			sqlHotness.setText(returnedHotness);
-			
+			try{
+				String s = sqlRow.getText().toString();	
+				long l = Long.parseLong(s);
+				HotOrNot hon = new HotOrNot(this);
+				hon.open();
+				String returnedName = hon.getName(l);
+				String returnedHotness = hon.getHotness(l);
+				hon.close();
+				
+				sqlName.setText(returnedName);
+				sqlHotness.setText(returnedHotness);
+			}catch(Exception e){
+				String error = e.toString();
+				Dialog d = new Dialog(this);
+				d.setTitle("Dang it!");
+				TextView tv = new TextView(this);
+				tv.setText(error);
+				d.setContentView(tv);
+				d.show();
+			}
 			break;
 		case R.id.bSQLmodify:
-			String mName = sqlName.getText().toString();
-			String mHotness = sqlHotness.getText().toString();
-			String sRow = sqlRow.getText().toString();	
-			long lRow = Long.parseLong(sRow);
-			
-			HotOrNot ex = new HotOrNot(this);
-			ex.open();
-			ex.updateEntry(lRow, mName, mHotness);
-			ex.close();
-			
+			try{
+				String mName = sqlName.getText().toString();
+				String mHotness = sqlHotness.getText().toString();
+				String sRow = sqlRow.getText().toString();	
+				long lRow = Long.parseLong(sRow);
+				
+				HotOrNot ex = new HotOrNot(this);
+				ex.open();
+				ex.updateEntry(lRow, mName, mHotness);
+				ex.close();
+			}catch(Exception e){
+				String error = e.toString();
+				Dialog d = new Dialog(this);
+				d.setTitle("Dang it!");
+				TextView tv = new TextView(this);
+				tv.setText(error);
+				d.setContentView(tv);
+				d.show();
+			}
 			break;
 		case R.id.bSQLdelete:
-			
-			break;
+			try{
+				String sRow1 = sqlRow.getText().toString();	
+				long lRow1 = Long.parseLong(sRow1);
+				HotOrNot ex1 = new HotOrNot(this);
+				ex1.open();
+				ex1.deleteEntry(lRow1);
+				ex1.close();
+				break;
+			}catch(Exception e){
+				String error = e.toString();
+				Dialog d = new Dialog(this);
+				d.setTitle("Dang it!");
+				TextView tv = new TextView(this);
+				tv.setText(error);
+				d.setContentView(tv);
+				d.show();
+			}
 		}
 		
 	}
