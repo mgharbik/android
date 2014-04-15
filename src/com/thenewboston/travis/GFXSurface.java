@@ -15,7 +15,8 @@ import android.view.View.OnTouchListener;
 public class GFXSurface extends Activity implements OnTouchListener {
 
 	MyBringBackSurface ourSurfaceView;
-	float x, y;
+	float x, y, sX, sY, fX, fY;
+	Bitmap test, plus;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +26,12 @@ public class GFXSurface extends Activity implements OnTouchListener {
 		ourSurfaceView.setOnTouchListener(this);
 		x = 0;
 		y = 0;
+		sX = 0;
+		sY = 0;
+		fX = 0;
+		fY = 0;
+		test = BitmapFactory.decodeResource(getResources(), R.drawable.green_ball);
+		plus = BitmapFactory.decodeResource(getResources(), R.drawable.plus);
 		setContentView(ourSurfaceView);
 	}
 
@@ -47,6 +54,18 @@ public class GFXSurface extends Activity implements OnTouchListener {
 		// TODO Auto-generated method stub
 		x = event.getX();
 		y = event.getY();
+		
+		switch(event.getAction()){
+		case MotionEvent.ACTION_DOWN:
+			sX = event.getX();
+			sY = event.getY();
+			break;
+		case MotionEvent.ACTION_UP:
+			fX = event.getX();
+			fY = event.getY();
+			break;
+		}
+		
 		return true;
 	}
 
@@ -93,8 +112,13 @@ public class GFXSurface extends Activity implements OnTouchListener {
 				Canvas canvas = ourHolder.lockCanvas();
 				canvas.drawRGB(02, 02, 150);
 				if (x != 0 && y != 0){
-					Bitmap test = BitmapFactory.decodeResource(getResources(), R.drawable.green_ball);
 					canvas.drawBitmap(test, x-(test.getWidth()/2), y-(test.getHeight()/2), null);
+				}
+				if (sX != 0 && sY != 0){
+					canvas.drawBitmap(plus, sX-(plus.getWidth()/2), sY-(plus.getHeight()/2), null);
+				}
+				if (fX != 0 && fY != 0){
+					canvas.drawBitmap(plus, fX-(plus.getWidth()/2), fY-(plus.getHeight()/2), null);
 				}
 				ourHolder.unlockCanvasAndPost(canvas);
 			}
