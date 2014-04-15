@@ -15,7 +15,7 @@ public class Accelerate extends Activity implements SensorEventListener{
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
-		setContentView(new MyBringBackSurface(this));
+		//setContentView(new MyBringBackSurface(this));
 	}
 
 	@Override
