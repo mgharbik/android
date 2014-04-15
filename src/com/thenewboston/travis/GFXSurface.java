@@ -47,7 +47,7 @@ public class GFXSurface extends Activity implements OnTouchListener {
 		// TODO Auto-generated method stub
 		x = event.getX();
 		y = event.getY();
-		return false;
+		return true;
 	}
 
 	// MyBringBackSurface Class
@@ -94,7 +94,7 @@ public class GFXSurface extends Activity implements OnTouchListener {
 				canvas.drawRGB(02, 02, 150);
 				if (x != 0 && y != 0){
 					Bitmap test = BitmapFactory.decodeResource(getResources(), R.drawable.green_ball);
-					canvas.drawBitmap(test, x, y, null);
+					canvas.drawBitmap(test, x-(test.getWidth()/2), y-(test.getHeight()/2), null);
 				}
 				ourHolder.unlockCanvasAndPost(canvas);
 			}
