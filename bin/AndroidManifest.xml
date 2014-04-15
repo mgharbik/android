@@ -93,6 +93,10 @@
             android:name=".OpenedClass"
             android:label="@string/app_name" >
         </activity>
+        <activity
+            android:name=".SoundStuff"
+            android:label="@string/app_name" >
+        </activity>
        	<activity
             android:name=".SQLiteExample"
             android:label="@string/app_name" >
