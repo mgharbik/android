@@ -15,7 +15,7 @@ import android.view.View.OnTouchListener;
 public class GFXSurface extends Activity implements OnTouchListener {
 
 	MyBringBackSurface ourSurfaceView;
-	float x, y, sX, sY, fX, fY;
+	float x, y, sX, sY, fX, fY, dX, dY, aniX, aniY, scaledX, scaledY;
 	Bitmap test, plus;
 	
 	@Override
@@ -30,6 +30,7 @@ public class GFXSurface extends Activity implements OnTouchListener {
 		sY = 0;
 		fX = 0;
 		fY = 0;
+		dX = dY = aniX = aniY = scaledX = scaledY = 0;
 		test = BitmapFactory.decodeResource(getResources(), R.drawable.green_ball);
 		plus = BitmapFactory.decodeResource(getResources(), R.drawable.plus);
 		setContentView(ourSurfaceView);
@@ -63,6 +64,10 @@ public class GFXSurface extends Activity implements OnTouchListener {
 		case MotionEvent.ACTION_UP:
 			fX = event.getX();
 			fY = event.getY();
+			dX = fX - sX;
+			dY = fY - sY;
+			scaledX = dX/30;
+			scaledY = dY/30;
 			break;
 		}
 		
@@ -118,8 +123,12 @@ public class GFXSurface extends Activity implements OnTouchListener {
 					canvas.drawBitmap(plus, sX-(plus.getWidth()/2), sY-(plus.getHeight()/2), null);
 				}
 				if (fX != 0 && fY != 0){
+					canvas.drawBitmap(test, x-(test.getWidth()/2)-aniX, y-(test.getHeight()/2)-aniY, null);
 					canvas.drawBitmap(plus, fX-(plus.getWidth()/2), fY-(plus.getHeight()/2), null);
 				}
+				aniX = aniX + scaledX;
+				aniY = aniY + scaledY;
+				
 				ourHolder.unlockCanvasAndPost(canvas);
 			}
 		}
