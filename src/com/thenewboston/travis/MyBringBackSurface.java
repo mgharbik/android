@@ -9,7 +9,7 @@ public class MyBringBackSurface extends SurfaceView implements Runnable {
 
 	SurfaceHolder ourHolder;
 	Thread ourThread = null;
-	boolean isRunning = true;
+	boolean isRunning = false;
 	
 	public MyBringBackSurface(Context context) {
 		// TODO Auto-generated constructor stub
