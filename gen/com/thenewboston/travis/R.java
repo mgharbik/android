@@ -52,7 +52,7 @@ public final class R {
         public static final int bSub=0x7f0b0014;
         public static final int bgetInfo=0x7f0b0028;
         public static final int cbSlidable=0x7f0b0022;
-        public static final int content=0x7f0b0020;
+        public static final int content=0x7f0b0021;
         public static final int etAction=0x7f0b0009;
         public static final int etCommands=0x7f0b002d;
         public static final int etEmails=0x7f0b0001;
@@ -65,7 +65,7 @@ public final class R {
         public static final int etSend=0x7f0b000e;
         public static final int etThings=0x7f0b0007;
         public static final int exit=0x7f0b0033;
-        public static final int handle=0x7f0b0021;
+        public static final int handle=0x7f0b001f;
         public static final int ibTakePic=0x7f0b0016;
         public static final int ivReturnedPic=0x7f0b0015;
         public static final int preferences=0x7f0b0032;
@@ -73,7 +73,7 @@ public final class R {
         public static final int rNeymar=0x7f0b001c;
         public static final int rRonaldo=0x7f0b001b;
         public static final int rgAnswers=0x7f0b0019;
-        public static final int slidingD=0x7f0b001f;
+        public static final int slidingD=0x7f0b0020;
         public static final int tableLayout1=0x7f0b002b;
         public static final int tbPassword=0x7f0b002f;
         public static final int textView1=0x7f0b0000;
