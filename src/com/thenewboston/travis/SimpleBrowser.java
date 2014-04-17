@@ -21,6 +21,7 @@ public class SimpleBrowser extends Activity implements OnClickListener {
 		setContentView(R.layout.simplebrowser);
 		
 		ourBrowser = (WebView) findViewById(R.id.wvBrowser);
+		ourBrowser.setWebViewClient(new ourViewClient());
 		ourBrowser.loadUrl("http://google.com");
 		
 		go = (Button) findViewById(R.id.btGo);
