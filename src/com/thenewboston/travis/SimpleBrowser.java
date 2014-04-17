@@ -1,9 +1,11 @@
 package com.thenewboston.travis;
 
 import android.app.Activity;
+import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.inputmethod.InputMethodManager;
 import android.webkit.WebView;
 import android.widget.Button;
 import android.widget.EditText;
@@ -55,6 +57,8 @@ public class SimpleBrowser extends Activity implements OnClickListener {
 		case R.id.btGo:
 			String theWebSite =  url.getText().toString();
 			ourBrowser.loadUrl(theWebSite);
+			InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+			imm.hideSoftInputFromWindow(url.getWindowToken(), 0);
 			break;
 		case R.id.bBack:
 			if (ourBrowser.canGoBack())
