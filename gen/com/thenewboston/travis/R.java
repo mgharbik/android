@@ -35,11 +35,12 @@ public final class R {
         public static final int splash_background1=0x7f020007;
     }
     public static final class id {
-        public static final int aboutUs=0x7f0b0035;
-        public static final int action_settings=0x7f0b0038;
+        public static final int aboutUs=0x7f0b003d;
+        public static final int action_settings=0x7f0b0040;
         public static final int analogClock1=0x7f0b000d;
         public static final int bAdd=0x7f0b0013;
-        public static final int bResutls=0x7f0b0032;
+        public static final int bAddTab=0x7f0b0038;
+        public static final int bResutls=0x7f0b003a;
         public static final int bReturn=0x7f0b001d;
         public static final int bSA=0x7f0b000f;
         public static final int bSAFR=0x7f0b0010;
@@ -49,12 +50,14 @@ public final class R {
         public static final int bSQLopenView=0x7f0b002a;
         public static final int bSentEmail=0x7f0b000c;
         public static final int bSetWall=0x7f0b0017;
+        public static final int bStartWatch=0x7f0b0033;
+        public static final int bStopWatch=0x7f0b0034;
         public static final int bSub=0x7f0b0014;
         public static final int bgetInfo=0x7f0b002c;
         public static final int cbSlidable=0x7f0b0026;
         public static final int content=0x7f0b0024;
         public static final int etAction=0x7f0b0009;
-        public static final int etCommands=0x7f0b0031;
+        public static final int etCommands=0x7f0b0039;
         public static final int etEmails=0x7f0b0001;
         public static final int etIntro=0x7f0b0003;
         public static final int etName=0x7f0b0005;
@@ -64,7 +67,7 @@ public final class R {
         public static final int etSQLRowInfo=0x7f0b002b;
         public static final int etSend=0x7f0b000e;
         public static final int etThings=0x7f0b0007;
-        public static final int exit=0x7f0b0037;
+        public static final int exit=0x7f0b003f;
         public static final int handle=0x7f0b0025;
         public static final int handle1=0x7f0b001f;
         public static final int handle2=0x7f0b0020;
@@ -72,14 +75,18 @@ public final class R {
         public static final int handle4=0x7f0b0022;
         public static final int ibTakePic=0x7f0b0016;
         public static final int ivReturnedPic=0x7f0b0015;
-        public static final int preferences=0x7f0b0036;
+        public static final int preferences=0x7f0b003e;
         public static final int rMessi=0x7f0b001a;
         public static final int rNeymar=0x7f0b001c;
         public static final int rRonaldo=0x7f0b001b;
         public static final int rgAnswers=0x7f0b0019;
         public static final int slidingD=0x7f0b0023;
+        public static final int tab1=0x7f0b0032;
+        public static final int tab2=0x7f0b0036;
+        public static final int tab3=0x7f0b0037;
+        public static final int tabhost=0x7f0b0031;
         public static final int tableLayout1=0x7f0b002f;
-        public static final int tbPassword=0x7f0b0033;
+        public static final int tbPassword=0x7f0b003b;
         public static final int textView1=0x7f0b0000;
         public static final int textView2=0x7f0b0002;
         public static final int textView3=0x7f0b0004;
@@ -89,8 +96,9 @@ public final class R {
         public static final int tvDisplay=0x7f0b0012;
         public static final int tvGot=0x7f0b0011;
         public static final int tvQuestion=0x7f0b0018;
-        public static final int tvResults=0x7f0b0034;
+        public static final int tvResults=0x7f0b003c;
         public static final int tvSQLinfo=0x7f0b0030;
+        public static final int tvShowResults=0x7f0b0035;
         public static final int tvText=0x7f0b001e;
     }
     public static final class layout {
@@ -104,7 +112,8 @@ public final class R {
         public static final int splash=0x7f030007;
         public static final int sqliteexample=0x7f030008;
         public static final int sqlview=0x7f030009;
-        public static final int text=0x7f03000a;
+        public static final int tabs=0x7f03000a;
+        public static final int text=0x7f03000b;
     }
     public static final class menu {
         public static final int cool_menu=0x7f0a0000;
