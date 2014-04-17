@@ -14,7 +14,8 @@ import android.widget.ListView;
 public class Menu extends ListActivity{
 
 	String classes[] = { "StartingPoint", "TextPlay", "Email", "Camera",
-			"Data", "GFX", "GFXSurface", "SQLiteExample", "SoundStuff", "Slider", "Tabs", "SimpleBrowser" };
+			"Data", "GFX", "GFXSurface", "SQLiteExample", "SoundStuff", 
+			"Slider", "Tabs", "SimpleBrowser", "Flipper" };
 	
 
 

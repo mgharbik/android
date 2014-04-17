@@ -57,6 +57,7 @@ public class SimpleBrowser extends Activity implements OnClickListener {
 		case R.id.btGo:
 			String theWebSite =  url.getText().toString();
 			ourBrowser.loadUrl(theWebSite);
+			// hiding the keyboard after using an EditText
 			InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
 			imm.hideSoftInputFromWindow(url.getWindowToken(), 0);
 			break;
