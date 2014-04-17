@@ -93,6 +93,7 @@ public class InternalData extends Activity implements OnClickListener {
 			}finally{
 				try {
 					fis.close();
+					dataResults.setText(collected);
 				} catch (IOException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
