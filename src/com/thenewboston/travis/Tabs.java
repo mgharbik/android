@@ -14,6 +14,8 @@ public class Tabs extends Activity implements OnClickListener {
 	TabHost th;
 	TabSpec specs;
 	Button newTab, bStart, bStop;
+	TextView showResults;
+	long start, stop;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +26,8 @@ public class Tabs extends Activity implements OnClickListener {
 		newTab = (Button) findViewById(R.id.bAddTab);
 		bStart = (Button) findViewById(R.id.bStartWatch);
 		bStop = (Button) findViewById(R.id.bStopWatch);
+		showResults = (TextView) findViewById(R.id.tvShowResults);
+		
 		newTab.setOnClickListener(this);
 		bStart.setOnClickListener(this);
 		bStop.setOnClickListener(this);
@@ -41,6 +45,7 @@ public class Tabs extends Activity implements OnClickListener {
 		specs.setContent(R.id.tab3);
 		specs.setIndicator("Add a Tab");
 		th.addTab(specs);
+		start = 0;
 	}
 
 	@Override
@@ -65,10 +70,15 @@ public class Tabs extends Activity implements OnClickListener {
 			
 			break;
 		case R.id.bStartWatch:
-					
-					break;
+			start = System.currentTimeMillis();		
+			break;
 		case R.id.bStopWatch:
+			stop = System.currentTimeMillis();
 			
+			if(start != 0){
+				long result = stop - start;
+				showResults.setText(Long.toString(result));
+			}
 			break;
 
 		}
