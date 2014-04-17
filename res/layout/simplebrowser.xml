@@ -14,8 +14,7 @@
             android:id="@+id/etURL"
             android:layout_weight="2"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10" >
+            android:layout_height="wrap_content" >
 
         </EditText>
 		
@@ -31,7 +30,6 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="8"
         android:orientation="horizontal" >
 
         <Button
@@ -63,10 +61,10 @@
             android:text="Clear History" />
         
     </LinearLayout>
-
+	
 	<WebView 
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:id="@+id/wvBrowser" />
-    
+	        android:layout_width="fill_parent"
+	        android:layout_height="fill_parent"
+	        android:id="@+id/wvBrowser" />
+	
 </LinearLayout>
