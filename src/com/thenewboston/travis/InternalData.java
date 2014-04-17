@@ -1,5 +1,6 @@
 package com.thenewboston.travis;
 
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -53,7 +54,27 @@ public class InternalData extends Activity implements OnClickListener {
 		// TODO Auto-generated method stub
 		switch (v.getId()) {
 		case R.id.bSave:
-
+			String data = sharedData.getText().toString();
+			// Saving data via file 
+			/*File f = new File(FILENAME);
+			try {
+				fos = new FileOutputStream(f);
+				// write some data
+				fos.close();
+			} catch (FileNotFoundException e) {
+				e.printStackTrace();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+			*/
+			try {
+				fos = openFileOutput(FILENAME, Context.MODE_PRIVATE);
+				fos.write(data.getBytes());
+				fos.close();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+			
 			break;
 		case R.id.bLoad:
 
