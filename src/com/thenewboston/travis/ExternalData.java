@@ -19,6 +19,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class ExternalData extends Activity implements OnItemSelectedListener, OnClickListener {
 
@@ -108,6 +109,7 @@ public class ExternalData extends Activity implements OnItemSelectedListener, On
 			
 			checkState();
 			if(canW == canR == true){
+				path.mkdirs();
 				try {
 					InputStream is = getResources().openRawResource(R.drawable.green_ball);
 					OutputStream os = new FileOutputStream(file);
@@ -116,6 +118,9 @@ public class ExternalData extends Activity implements OnItemSelectedListener, On
 					os.write(data);
 					is.close();
 					os.close();
+					
+					Toast t = Toast.makeText(ExternalData.this, "File has been saved", Toast.LENGTH_LONG);
+					t.show();
 					
 				} catch (FileNotFoundException e) {
 					// TODO Auto-generated catch block
