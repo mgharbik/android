@@ -9,6 +9,7 @@ import java.io.IOException;
 import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -78,6 +79,17 @@ public class InternalData extends Activity implements OnClickListener {
 			
 			break;
 		case R.id.bLoad:
+			new loadSomeStuff().execute(FILENAME);
+			break;
+			
+		}
+	}
+	
+	public class loadSomeStuff extends AsyncTask<String, Integer, String>{
+
+		@Override
+		protected String doInBackground(String... params) {
+			// TODO Auto-generated method stub
 			String collected = null;
 			FileInputStream fis = null;
 			try {
@@ -93,14 +105,14 @@ public class InternalData extends Activity implements OnClickListener {
 			}finally{
 				try {
 					fis.close();
-					dataResults.setText(collected);
+					return collected;
 				} catch (IOException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
 			}
-			break;
+			return null;
 		}
+		
 	}
-
 }
