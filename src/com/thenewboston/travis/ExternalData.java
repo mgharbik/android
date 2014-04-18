@@ -8,6 +8,8 @@ import java.io.InputStream;
 import java.io.OutputStream;
 
 import android.app.Activity;
+import android.media.MediaScannerConnection;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.view.View;
@@ -105,7 +107,7 @@ public class ExternalData extends Activity implements OnItemSelectedListener, On
 		switch (arg0.getId()) {
 		case R.id.bConfirmSaveAs:
 			String f = saveFile.getText().toString();
-			file = new File(path, f);
+			file = new File(path, f + ".png");
 			
 			checkState();
 			if(canW == canR == true){
@@ -121,6 +123,20 @@ public class ExternalData extends Activity implements OnItemSelectedListener, On
 					
 					Toast t = Toast.makeText(ExternalData.this, "File has been saved", Toast.LENGTH_LONG);
 					t.show();
+					
+					// Update files for the user to use
+					MediaScannerConnection.scanFile(ExternalData.this, 
+							new String[] {file.toString()}, 
+							null, 
+							new MediaScannerConnection.OnScanCompletedListener() {
+								
+								@Override
+								public void onScanCompleted(String path, Uri uri) {
+									// TODO Auto-generated method stub
+									Toast t = Toast.makeText(ExternalData.this, "scan complete", Toast.LENGTH_LONG);
+									t.show();
+								}
+							});
 					
 				} catch (FileNotFoundException e) {
 					// TODO Auto-generated catch block
