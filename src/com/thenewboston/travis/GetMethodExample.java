@@ -8,7 +8,6 @@ import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.DefaultHttpClient;
-import org.apache.http.protocol.DefaultedHttpContext;
 
 public class GetMethodExample {
 	
@@ -17,7 +16,7 @@ public class GetMethodExample {
 		String data = null;
 		try{
 			HttpClient  client = new DefaultHttpClient();
-			URI website = new URI("http://www.mybringback.com");
+			URI website = new URI("http://mgharbik.heroku.com");
 			HttpGet request = new HttpGet();
 			request.setURI(website);
 			HttpResponse response = client.execute(request);
