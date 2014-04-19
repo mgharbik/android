@@ -19,6 +19,8 @@ public class Accelerate extends Activity implements SensorEventListener{
 	
 	float x, y, sensorX, sensorY;
 	Bitmap ball;
+	SensorManager sm ;
+	MyBringBackSurface ourSurfaceView;
 	
 	// WE SHOULD COPY HERE THE MyBringBackSurface CLASS FROM GFXSURFACE
 	// PROBABLY IT WAS IMPLEMENTED IN BETWEEN 70-110 TUTORIALS
@@ -63,7 +65,9 @@ public class Accelerate extends Activity implements SensorEventListener{
 				
 				Canvas canvas = ourHolder.lockCanvas();
 				canvas.drawRGB(02, 02, 150);
-				
+				float centerX = canvas.getWidth()/2;
+				float centerY = canvas.getHeight()/2;
+				canvas.drawBitmap(ball, centerX + sensorX*20, centerY + sensorY*20, null);
 				ourHolder.unlockCanvasAndPost(canvas);
 			}
 		}
@@ -74,8 +78,8 @@ public class Accelerate extends Activity implements SensorEventListener{
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
-		setContentView(new MyBringBackSurface(this));
-		SensorManager sm = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
+
+		sm = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
 		if (sm.getSensorList(Sensor.TYPE_ACCELEROMETER).size() != 0){
 			Sensor s = sm.getSensorList(Sensor.TYPE_ACCELEROMETER).get(0);
 			sm.registerListener(this, s, SensorManager.SENSOR_DELAY_NORMAL);
@@ -83,7 +87,22 @@ public class Accelerate extends Activity implements SensorEventListener{
 		
 		ball = BitmapFactory.decodeResource(getResources(), R.drawable.green_ball);
 		x = y = sensorX = sensorY = 0;
+		
+		ourSurfaceView = new MyBringBackSurface(this);
+		ourSurfaceView.resume();
+		setContentView(ourSurfaceView);
 	}
+
+	
+	
+	@Override
+	protected void onPause() {
+		// TODO Auto-generated method stub
+		sm.unregisterListener(this);
+		super.onPause();
+	}
+
+
 
 	@Override
 	public void onAccuracyChanged(Sensor sensor, int accuracy) {
