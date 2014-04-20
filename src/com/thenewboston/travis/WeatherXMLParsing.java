@@ -38,6 +38,7 @@ public class WeatherXMLParsing extends Activity implements OnClickListener {
 		StringBuilder URL = new StringBuilder(baseURL);
 		URL.append(c + "," + s);
 		String fullURL = URL.toString();
+		
 	}
 
 
