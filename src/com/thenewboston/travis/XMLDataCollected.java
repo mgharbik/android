@@ -14,6 +14,6 @@ public class XMLDataCollected {
 	}
 	
 	public String dataToString(){
-		return "In " + city + " the current temperature in F is " + temp + "degrees";
+		return "In " + city + " the current temperature in F is " + temp + " degrees";
 	}
 }

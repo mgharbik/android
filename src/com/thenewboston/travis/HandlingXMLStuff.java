@@ -23,6 +23,10 @@ public class HandlingXMLStuff extends DefaultHandler {
 		}
 		
 	}
+
+	public String getInformation() {
+		return info.dataToString();
+	}
 	
 	
 	
