@@ -11,7 +11,8 @@ import android.widget.TextView;
 public class WeatherXMLParsing extends Activity implements OnClickListener {
 	
 	
-	String URL = "http://www.google.com/ig/api?weather=";
+	//String URL = "http://www.google.com/ig/api?weather=";
+	final static String baseURL = "http://www.google.com/ig/api?weather=";
 	TextView tv;
 	EditText city, state;
 	Button b;
@@ -31,7 +32,12 @@ public class WeatherXMLParsing extends Activity implements OnClickListener {
 	@Override
 	public void onClick(View arg0) {
 		// TODO Auto-generated method stub
+		String c = city.getText().toString();
+		String s = state.getText().toString();
 		
+		StringBuilder URL = new StringBuilder(baseURL);
+		URL.append(c + "," + s);
+		String fullURL = URL.toString();
 	}
 
 
