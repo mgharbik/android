@@ -1,5 +1,13 @@
 package com.thenewboston.travis;
 
+import java.net.URL;
+
+import javax.xml.parsers.SAXParser;
+import javax.xml.parsers.SAXParserFactory;
+
+import org.xml.sax.InputSource;
+import org.xml.sax.XMLReader;
+
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
@@ -31,14 +39,26 @@ public class WeatherXMLParsing extends Activity implements OnClickListener {
 
 	@Override
 	public void onClick(View arg0) {
-		// TODO Auto-generated method stub
+		// TODO Auto-generatedmethod stub
 		String c = city.getText().toString();
 		String s = state.getText().toString();
 		
 		StringBuilder URL = new StringBuilder(baseURL);
 		URL.append(c + "," + s);
 		String fullURL = URL.toString();
-		
+		try{
+			URL website = new URL(fullURL);
+			// getting xml reader parse data
+			SAXParserFactory spf = SAXParserFactory.newInstance();
+			SAXParser sp = spf.newSAXParser();
+			XMLReader xr = sp.getXMLReader();
+			HandlingXMLStuff goingWork = new HandlingXMLStuff();
+			xr.setContentHandler(goingWork);
+			xr.parse(new InputSource(website.openStream()));
+			
+		}catch (Exception e){
+			tv.setText("error");
+		}
 	}
 
 
