@@ -34,7 +34,7 @@ public class HttpExample extends Activity {
 		setContentView(R.layout.httpexample);
 		httpStuff = (TextView) findViewById(R.id.tvHttp);
 		client = new DefaultHttpClient();
-		new Read().execute("text");
+		new Read().execute("message");
 		
 		
 		/*
@@ -65,7 +65,7 @@ public class HttpExample extends Activity {
 			JSONObject last = timeline.getJSONObject(0);
 			return last;
 		}else{
-			Toast.makeText(HttpExample.this, "erroe", Toast.LENGTH_SHORT);
+			Toast.makeText(HttpExample.this, "error", Toast.LENGTH_SHORT);
 			return null;
 		}
 	}

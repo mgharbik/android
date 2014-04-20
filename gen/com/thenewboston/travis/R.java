@@ -35,8 +35,8 @@ public final class R {
         public static final int splash_background1=0x7f020007;
     }
     public static final class id {
-        public static final int aboutUs=0x7f0b0051;
-        public static final int action_settings=0x7f0b0054;
+        public static final int aboutUs=0x7f0b0055;
+        public static final int action_settings=0x7f0b0058;
         public static final int analogClock1=0x7f0b000d;
         public static final int bAdd=0x7f0b001c;
         public static final int bAddTab=0x7f0b004c;
@@ -61,12 +61,14 @@ public final class R {
         public static final int bStartWatch=0x7f0b0047;
         public static final int bStopWatch=0x7f0b0048;
         public static final int bSub=0x7f0b001d;
+        public static final int bWeather=0x7f0b0053;
         public static final int bgetInfo=0x7f0b0040;
         public static final int btGo=0x7f0b002d;
         public static final int button1=0x7f0b0015;
         public static final int cbSlidable=0x7f0b003a;
         public static final int content=0x7f0b0038;
         public static final int etAction=0x7f0b0009;
+        public static final int etCity=0x7f0b0051;
         public static final int etCommands=0x7f0b004d;
         public static final int etEmails=0x7f0b0001;
         public static final int etIntro=0x7f0b0003;
@@ -78,9 +80,10 @@ public final class R {
         public static final int etSavaAs=0x7f0b0011;
         public static final int etSend=0x7f0b0016;
         public static final int etSharedPreferences=0x7f0b0028;
+        public static final int etState=0x7f0b0052;
         public static final int etThings=0x7f0b0007;
         public static final int etURL=0x7f0b002c;
-        public static final int exit=0x7f0b0053;
+        public static final int exit=0x7f0b0057;
         public static final int handle=0x7f0b0039;
         public static final int handle1=0x7f0b0033;
         public static final int handle2=0x7f0b0034;
@@ -88,7 +91,7 @@ public final class R {
         public static final int handle4=0x7f0b0036;
         public static final int ibTakePic=0x7f0b001f;
         public static final int ivReturnedPic=0x7f0b001e;
-        public static final int preferences=0x7f0b0052;
+        public static final int preferences=0x7f0b0056;
         public static final int rMessi=0x7f0b0023;
         public static final int rNeymar=0x7f0b0025;
         public static final int rRonaldo=0x7f0b0024;
@@ -118,6 +121,7 @@ public final class R {
         public static final int tvSQLinfo=0x7f0b0044;
         public static final int tvShowResults=0x7f0b0049;
         public static final int tvText=0x7f0b0027;
+        public static final int tvWeather=0x7f0b0054;
         public static final int viewFlipper1=0x7f0b0014;
         public static final int wvBrowser=0x7f0b0032;
     }
@@ -139,6 +143,7 @@ public final class R {
         public static final int sqlview=0x7f03000e;
         public static final int tabs=0x7f03000f;
         public static final int text=0x7f030010;
+        public static final int weather=0x7f030011;
     }
     public static final class menu {
         public static final int cool_menu=0x7f0a0000;
